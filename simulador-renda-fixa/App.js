@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker'
 import Feather from '@expo/vector-icons/Feather'
@@ -18,20 +18,24 @@ export default function App() {
   const [remuneraçãoPoupança, setRemuneraçãoPoupança] = useState('')
   const [percentualCDB, setPercentualCDB] = useState('')
   const [percentualLCILCA, setPercentualLCILCA] = useState('')
+  const [diasCorridos, setDiasCorridos] = useState(0)
 
   function mudarDataVencimento(event, date){
     // setShowVenc(Platform.OS === 'ios')
     setShowVenc(false)
     setDataVencimento(date)
-    console.log(dataVencimento, showVenc)
   }
 
   function mudarDataInvestimento(event, date){
     // setShowVenc(Platform.OS === 'ios')
     setShowInv(false)
     setDataInvestimento(date)
-    console.log(dataInvestimento, showInv)
   }
+
+  useEffect(() => {
+    const dias = (dataVencimento.getTime() - dataInvestimento.getTime())/(1000 * 3600 * 24) //Cálculo da diferença entre dias a partir dos milissegundos internos de cada data
+    setDiasCorridos(dias)
+  }, [dataInvestimento, dataVencimento])
 
   return (
     <View style={styles.container}>
@@ -49,16 +53,17 @@ export default function App() {
         <TouchableOpacity onPress={() => setShowInv(true)}>
           <Feather name="calendar" size={18}/>
         </TouchableOpacity>
+
+        {showInv && 
+          <DateTimePicker
+            value={dataInvestimento}
+            mode="date"
+            display="calendar"
+            onChange={(event, date) => mudarDataInvestimento(event, date)}
+          />
+        }
       </View>
 
-      {showInv && 
-        <DateTimePicker
-          value={dataInvestimento}
-          mode="date"
-          display="calendar"
-          onChange={(event, date) => mudarDataInvestimento(event, date)}
-        />
-      }
 
       <View style={{flexDirection: 'row'}}>
         <Text>{dataVencimento.getDate() <= 9 ? '0' + dataVencimento.getDate() : dataVencimento.getDate()}/</Text>
@@ -67,16 +72,17 @@ export default function App() {
         <TouchableOpacity onPress={() => setShowVenc(true)}>
           <Feather name="calendar" size={18}/>
         </TouchableOpacity>
+
+        {showVenc && 
+          <DateTimePicker
+            value={dataVencimento}
+            mode="date"
+            display="calendar"
+            onChange={(event, date) => mudarDataVencimento(event, date)}
+          />
+        }
       </View>
 
-      {showVenc && 
-        <DateTimePicker
-          value={dataVencimento}
-          mode="date"
-          display="calendar"
-          onChange={(event, date) => mudarDataVencimento(event, date)}
-        />
-      }
 
       <TextInput 
         style={styles.input} 
@@ -134,7 +140,7 @@ export default function App() {
         keyboardType="numeric"
       />
 
-      <Text>Dias corridos: </Text>
+      <Text>Dias corridos: {diasCorridos}</Text>
       <Text>Dias úteis: </Text>
       <Text>Alíquota do Imposto de Renda: </Text>
       <StatusBar style="auto" />
