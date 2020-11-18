@@ -47,6 +47,7 @@ export default function App() {
       />
 
       <View style={{flexDirection: 'row'}}>
+        <Text>Data de investimento: </Text>
         <Text>{dataInvestimento.getDate() <= 9 ? '0' + dataInvestimento.getDate() : dataInvestimento.getDate()}/</Text>
         <Text>{dataInvestimento.getMonth() + 1 <= 9 ? '0' + `${dataInvestimento.getMonth() + 1}` : dataInvestimento.getMonth() + 1}/</Text>
         <Text>{dataInvestimento.getFullYear()}</Text>
@@ -66,6 +67,7 @@ export default function App() {
 
 
       <View style={{flexDirection: 'row'}}>
+        <Text>Data de vencimento: </Text>
         <Text>{dataVencimento.getDate() <= 9 ? '0' + dataVencimento.getDate() : dataVencimento.getDate()}/</Text>
         <Text>{dataVencimento.getMonth() + 1 <= 9 ? '0' + `${dataVencimento.getMonth() + 1}` : dataVencimento.getMonth() + 1}/</Text>
         <Text>{dataVencimento.getFullYear()}</Text>
