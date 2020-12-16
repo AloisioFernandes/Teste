@@ -1,6 +1,6 @@
 const gulp = require('gulp')
 const { series, parallel } = require('gulp')
-
+// acessar pasta do arquivo gulpfile.js pelo terminal e digitar gulp
 const antes1 = (cb) => {
   console.log('Tarefa Antes 1!')
   return cb()
