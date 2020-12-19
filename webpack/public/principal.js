@@ -89,7 +89,7 @@ eval("const moduloB = __webpack_require__(/*! ./moduloB */ \"./src/modulos/modul
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = {\n  saudacao() { return 'olá eu sou o Módulo B!!!' }\n}\n\n//# sourceURL=webpack:///./src/modulos/moduloB.js?");
+eval("module.exports = {\n  saudacao() { return 'Olá eu sou o Módulo B!!!' }\n}\n\n//# sourceURL=webpack:///./src/modulos/moduloB.js?");
 
 /***/ }),
 
