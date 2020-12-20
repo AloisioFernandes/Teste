@@ -11,6 +11,10 @@ module.exports = {
     filename: 'principal.js',
     path: __dirname + '/public'
   },
+  devServer: {
+    contentBase: './public',
+    port: 3333
+  },
   optimization: {
     minimizer: [
       new TerserPlugin({
