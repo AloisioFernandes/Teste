@@ -34,7 +34,7 @@
             $('#resultado1').html(`Largura: ${l} e Altura: ${a}`)
         })
 
-        $(':input').select(e => { //verificar parte selecionada
+        $(':input').select(e => { //verificar parte selecionada de um input
             const inicio = e.target.selectionStart
             const fim = e.target.selectionEnd
             $('#resultado2').html(e.target.value.substring(inicio, fim))
