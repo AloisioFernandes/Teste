@@ -17,8 +17,8 @@
   <p><img align="center" src=".github/Bootstrap Componentes 1.png" alt="Componentes 1" width="800" border="0"></p>
   <p><img align="center" src=".github/Bootstrap Componentes 2.png" alt="Componentes 2" width="800" border="0"></p>
   <p><img align="center" src=".github/Bootstrap Componentes 3.png" alt="Componentes 3" width="800" border="0"></p>
+  <p><img align="center" src=".github/Bootstrap Componentes 4.jpg" alt="Componentes 4" width="800" border="0"></p>
 </p>
-<p><img align="center" src=".github/Bootstrap Componentes 4.jpg" alt="Componentes 4" width="800" border="0"></p>
 
 # Formulário
 <p align="center">
