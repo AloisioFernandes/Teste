@@ -1,0 +1,6 @@
+@import "~bootstrap/scss/bootstrap"; /*Importando de node_modules*/
+
+$fa-font-path: "~font-awesome/fonts"; /*Sobrescrevendo variável do sass*/
+@import "~font-awesome/scss/font-awesome";
+
+@import "custom"; /*Importação para gerar css final*/
