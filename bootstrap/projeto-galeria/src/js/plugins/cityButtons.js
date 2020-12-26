@@ -1,5 +1,7 @@
 import $ from 'jquery'
 
+import { onLoadHtmlSuccess } from '../core/includes'
+
 const duration = 300
 
 function filterByCity(city) {
@@ -41,4 +43,6 @@ $.fn.cityButtons = function() {
   return this //chain
 }
 
-$('[wm-city-buttons]').cityButtons() //aplicando plugin cityButtons para div com atributo wm-city-buttons
+onLoadHtmlSuccess(function() {
+  $('[wm-city-buttons]').cityButtons() //aplicando plugin cityButtons para div com atributo wm-city-buttons
+})
