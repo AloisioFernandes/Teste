@@ -20,8 +20,30 @@ export default function Calculator() {
     setCurrent(0)
   }
 
-  function doOperation(operation){
-    console.log(operation)
+  function doOperation(oper){
+    if(current === 0) {
+      setOperation(oper)
+      setCurrent(1)
+      setClearDisplay(true)
+    } else { //se mais de uma operação precisar ser realizada antes de apertar =
+      const equals = oper === '='
+      const currentOperation = operation
+
+      let vals = [...values]
+      try {
+        vals[0] = eval(`${values[0]} ${currentOperation} ${values[1]}`)
+      } catch(e) {
+        vals[0] = values[0]
+      }
+      
+      vals[1] = 0
+
+      setDisplayValue(vals[0])
+      setOperation(equals ? null : oper)
+      setCurrent(equals ? 0 : 1)
+      setClearDisplay(!equals)
+      setValues(vals)
+    }
   }
 
   function addDigit(n){
