@@ -12,15 +12,21 @@ const headerProps = {
 const UserCrud = () => {
   const [user, setUser] = useState({name: '', email: ''})
   const [list, setList] = useState([])
+
+  useEffect(() => {
+    axios(baseUrl).then(resp => {
+      setList(resp.data)
+    })
+  }, [])
   
-  function handleClear() {
-    setUser({name: '', email: ''})
+  function getUpdatedList(user, add=true) {
+    const lista = list.filter(u => u.id !== user.id)
+    if(add) lista.unshift(user)
+    return lista
   }
 
-  function getUpdatedList(user) {
-    const lista = list.filter(u => u.id !== user.id)
-    lista.unshift(user)
-    return lista
+  function handleClear() {
+    setUser({name: '', email: ''})
   }
   
   function handleSave() {
@@ -35,10 +41,63 @@ const UserCrud = () => {
       })
   }
 
+  function handleLoad(user) {
+    setUser(user)
+  }
+
+  function handleRemove(user) {
+    axios.delete(`${baseUrl}/${user.id}`).then(resp => {
+      const lista = getUpdatedList(user, false)
+      setList(lista)
+    })
+  }
+
   function updateField(event) {
     const usr = { ...user }
     usr[event.target.name] = event.target.value
     setUser(usr)
+  }
+
+  function renderTable() {
+    return(
+      <table className="table mt4">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {renderRows()}
+        </tbody>
+      </table>
+    )
+  }
+
+  function renderRows() {
+    return list.map(user => {
+      return (
+        <tr key={user.id}>
+          <td>{user.id}</td>
+          <td>{user.name}</td>
+          <td>{user.email}</td>
+          <td>
+            <button className="btn btn-warning"
+              onClick={() => handleLoad(user)}
+            >
+              <i className="fa fa-pencil"></i>
+            </button>
+            <button className="btn btn-danger ml-2"
+              onClick={() => handleRemove(user)}
+            >
+              <i className="fa fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      )
+    })
   }
 
   function renderForm() {
@@ -93,6 +152,7 @@ const UserCrud = () => {
   return (
     <Main {...headerProps}>
       {renderForm()}
+      {renderTable()}
     </Main>
   )
 }
