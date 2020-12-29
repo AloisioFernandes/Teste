@@ -3,5 +3,7 @@ Projeto do curso de Javascript da Cod3r feito em React. A aplicação simula um 
 
 <p align="center">
   <img align="center" src=".github/React Início.png" alt="Pontos Mobile" width="800" border="0">
+</p>
+<p align="center">
   <img align="center" src=".github/React CRUD.png" alt="Detalhes Mobile" width="800" border="0">
 </p>
