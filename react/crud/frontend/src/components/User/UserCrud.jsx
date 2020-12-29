@@ -35,10 +35,64 @@ const UserCrud = () => {
       })
   }
 
+  function updateField(event) {
+    const usr = { ...user }
+    usr[event.target.name] = event.target.value
+    setUser(usr)
+  }
+
+  function renderForm() {
+    return (
+      <div className="form">
+        <div className="row">
+          <div className="col-12 col-md-6">
+            <div className="form-group">
+              <label>Nome</label>
+              <input type="text" className="form-control" 
+                name="name" 
+                value={user.name}
+                onChange={(e) => updateField(e)}
+                placeholder="Digite o nome..."
+              />
+            </div>
+          </div>
+
+          <div className="col-12 col-md-6">
+            <div className="form-group">
+              <label>E-mail</label>
+              <input type="text" className="form-control" 
+                name="email" 
+                value={user.email}
+                onChange={(e) => updateField(e)}
+                placeholder="Digite o e-mail..."
+              />
+            </div>
+          </div>
+        </div>
+
+        <hr />
+        <div className="row">
+          <div className="col-12 d-flex justify-content-end">
+            <button className="btn btn-primary"
+              onClick={(e) => handleSave(e)}
+            >
+              Salvar
+            </button>
+
+            <button className="btn btn-secondary ml-2"
+              onClick={(e) => handleClear(e)}
+            >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <Main {...headerProps}>
-      Cadastro de Usuário
+      {renderForm()}
     </Main>
   )
 }
