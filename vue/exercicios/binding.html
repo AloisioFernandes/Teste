@@ -7,9 +7,29 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
-
+    <div id="app">
+        <p>{{ link }}</p>
+        <p><a href="{{ link }}">Canal?</a></p>
+        <p><a v-bind:href="link">Canal</a></p> <!-- Diretiva interpolada pelo v-bind -->
+        <p><a :href="link">Canal</a></p> <!-- Bind reduzido -->
+        <p>
+            <input type="text" v-model="nome" /><br /> <!-- v-model permite alterar a variável em data, atualizações em duas direções -->
+            <span>{{ nome }}</span>
+        </p>
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                nome: "Maria",
+                link: "https://youtube.com/cod3rcursos"
+            },
+            watch: { //funções com o mesmo nome que algum atributo para responder a alterações
+                nome(novoValor) {
+                    console.log(novoValor.toUpperCase())
+                }
+            }
+        })
     </script>
 </body>
 </html>
