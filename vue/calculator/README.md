@@ -1,24 +1,6 @@
-# calculator
+# Calculadora
+Projeto calculadora feito com Vue.
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+<p align="center">
+  <img align="center" src=".github/Calculadora Vue.png" alt="Calculadora Vue" width="800" border="0">
+</p>
