@@ -1,23 +1,23 @@
 <template>
   <div class="calculator">
     <Display value="1000" />
-    <Button label="AC" triple />
-    <Button label="/" operation />
-    <Button label="7" />
-    <Button label="8" />
-    <Button label="9" />
-    <Button label="*" operation />
-    <Button label="4" />
-    <Button label="5" />
-    <Button label="6" />
-    <Button label="-" operation />
-    <Button label="1" />
-    <Button label="2" />
-    <Button label="3" />
-    <Button label="+" operation />
-    <Button label="0" double />
-    <Button label="." />
-    <Button label="=" operation />
+    <Button label="AC" triple @onClickCalc="clearMemory" />
+    <Button label="/" operation @onClickCalc="setOperation" />
+    <Button label="7" @onClickCalc="addDigit" />
+    <Button label="8" @onClickCalc="addDigit" />
+    <Button label="9" @onClickCalc="addDigit" />
+    <Button label="*" operation @onClickCalc="setOperation" />
+    <Button label="4" @onClickCalc="addDigit" />
+    <Button label="5" @onClickCalc="addDigit" />
+    <Button label="6" @onClickCalc="addDigit" />
+    <Button label="-" operation @onClickCalc="setOperation" />
+    <Button label="1" @onClickCalc="addDigit" />
+    <Button label="2" @onClickCalc="addDigit" />
+    <Button label="3" @onClickCalc="addDigit" />
+    <Button label="+" operation @onClickCalc="setOperation" />
+    <Button label="0" double @onClickCalc="addDigit" />
+    <Button label="." @onClickCalc="addDigit" />
+    <Button label="=" operation @onClickCalc="setOperation" />
   </div>
 </template>
 
@@ -26,7 +26,18 @@ import Button from '../components/Button'
 import Display from '../components/Display'
 
 export default {
-  components: { Button, Display } //exportando componentes para serem utilizados no template
+  components: { Button, Display }, //exportando componentes para serem utilizados no template
+  methods: {
+    clearMemory() {
+      
+    },
+    setOperation(operation) {
+      
+    },
+    addDigit(n) {
+      
+    }
+  }
 }
 </script>
 

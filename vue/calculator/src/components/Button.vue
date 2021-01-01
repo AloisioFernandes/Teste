@@ -1,7 +1,8 @@
 <template> <!-- Aplica classe se propriedade for verdadeira. Classe aplicada terá mesmo nome que propriedade -->
   <button class="button"
     :class="{ double, triple, operation }"
-  >
+    @click="$emit('onClickCalc', label)"
+  > <!-- Emite evento onClickCalc passando label como parâmetro ao clicar -->
     {{ label }}
   </button>
 </template>
