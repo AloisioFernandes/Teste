@@ -32,10 +32,12 @@ async function createWindow() {
     win.loadURL('app://./index.html')
   }
 
-  win.webContents.on('did-finish-load', () => {
-    const { title, version } = require('../package.json')
-    win.setTitle(`${title} :: ${version}`)
-  })
+  const { title, version } = require('../package.json')
+  win.setTitle(`${title} :: ${version}`)
+  // win.webContents.on('did-finish-load', () => {
+  //   const { title, version } = require('../package.json')
+  //   win.setTitle(`${title} :: ${version}`)
+  // })
 }
 
 // Quit when all windows are closed.
