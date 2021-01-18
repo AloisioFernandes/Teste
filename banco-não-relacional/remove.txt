@@ -1,0 +1,1 @@
+comandos mongo para remover dados de coleção
