@@ -11,6 +11,7 @@ import { MatListModule } from '@angular/material/list'
 import { MatCardModule } from '@angular/material/card'
 import { MatButtonModule } from '@angular/material/button'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { HttpClientModule } from '@angular/common/http'
 
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
@@ -34,7 +35,7 @@ import { ProductCreateComponent } from './components/product/product-create/prod
     ForDirective,
     ProductCreateComponent
   ],
-  imports: [
+  imports: [ //deixa os módulos à disposição para os componentes
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -43,9 +44,10 @@ import { ProductCreateComponent } from './components/product/product-create/prod
     MatListModule,
     MatCardModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent] //aponata para o componente que será utilizado para carregar a aplicação
+  bootstrap: [AppComponent] //aponta para o componente que será utilizado para carregar a aplicação
 })
 export class AppModule { }
