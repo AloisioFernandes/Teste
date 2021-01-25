@@ -1,5 +1,5 @@
 # Angular CRUD
-Projeto realizado com Angular 9 simulando um sistema de listagem de produtos. Nesse sistema é possível realizar as operações de adicionar, listar, atualizar e deletar produtos. O backend da aplicação é feito com JSON server.
+Projeto realizado com Angular 9 simulando um sistema de listagem de produtos. Nesse sistema é possível realizar as operações de adicionar, listar, atualizar e deletar produtos. O backend da aplicação é feito com JSON server. Feito como projeto do curso Web Moderno da Cod3r disponível na Udemy.
 
 <p align="center">
   <p><img align="center" src=".github/Home.png" alt="Home" width="800" border="0"></p>
