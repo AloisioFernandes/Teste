@@ -1,0 +1,161 @@
+body {
+	background: #EFEFBB;
+	background: linear-gradient(to right, rgb(197, 230, 236), rgb(239, 187, 230));
+	color: white;
+	margin: 0;
+	font-family: rubik;
+}
+
+.container {
+	padding: 40px;
+	margin: 0 auto;
+}
+
+h1 {
+	text-align: center;
+	font-size: 54px;
+}
+
+.pokedex {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	grid-gap: 20px;
+	padding-inline-start: 0;
+}
+
+.card {
+	list-style: none;
+	padding: 40px;
+	color: #222;
+	text-align: center;
+	border-radius: 20px;
+	position: relative;
+}
+
+.card::after {
+	content: "";
+  display: block;
+  width: 50%;
+  height: 45%;
+  border-radius: 100%;
+  background-color: #fff;
+  opacity: .7;
+  position: absolute;
+  top: 15%;
+  left: 25%;
+}
+
+.steel {
+	background-color: #B7B7CE;
+}
+
+.fire {
+	background-color: #EE8130;
+}
+
+.grass {
+	background-color: #7AC74C;
+}
+
+.electric {
+	background-color: #F7D02C;
+}
+
+.water {
+	background-color: #6390F0;
+}
+
+.ice {
+	background-color: #96D9D6;
+}
+
+.ground {
+	background-color: #E2BF65;
+}
+
+.rock {
+	background-color: #B6A136;
+}
+
+.fairy {
+	background-color: #D685AD;
+}
+
+.ghost {
+	background-color: #735797;
+}
+
+.poison {
+	background-color: #A33EA1;
+}
+
+.bug {
+	background-color: #A6B91A;
+}
+
+.dragon {
+	background-color: #6F35FC;
+}
+
+.psychic {
+	background-color: #F95587;
+}
+
+.flying {
+	background-color: #A98FF3;
+}
+
+.fighting {
+	background-color: #C22E28;
+}
+
+.dark {
+	background-color: #705746;
+}
+
+.normal {
+	background-color: #A8A77A;
+}
+
+.card:hover {
+	animation: bounce 0.5s linear;
+}
+
+.card-title {
+	text-transform: capitalize;
+	margin-bottom: 0px;
+	font-size: 32px;
+	font-weight: normal;
+	position: relative;
+	z-index: 2;
+}
+
+.card-subtitle {
+	margin-top: 5px;
+	color: #666;
+	font-weight: lighter;
+	position: relative;
+	z-index: 2;
+}
+
+.card-image {
+	height: 180px;
+	position: relative;
+	z-index: 2;
+}
+
+@keyframes bounce {
+	20% {
+			transform: translateY(-6px);
+	}
+	40% {
+			transform: translateY(0px);
+	}
+
+	80% {
+			transform: translateY(-2px);
+	}
+	100% {
+			transform: translateY(0);
+	}
+}
