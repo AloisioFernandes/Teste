@@ -5,10 +5,25 @@ const intialState = { users }
 const UsersContext = createContext({}) // inicia contexto de usuários com objeto vazio
 
 const actions = {
+  createUser(state, action) {
+    const user = action.payload
+    user.id = Math.random()
+    return {
+      ...state,
+      users: [...state.users, user] // acrescenta novo usuário na lista
+    }
+  },
+  updateUser(state, action) {
+    const updated = action.payload
+    return {
+      ...state,
+      users: state.users.map(u => u.id === updated.id ? updated : u) // percorre array de usuários, se o id do usuário é igual ao do usuário alterado, retorna o alterado, se não retorna o usuário percorrido. Método para substituir/alterar um usuário de um array de usuários 
+    }
+  },
   deleteUser(state, action) {
     const user = action.payload
     return {
-      // ...state, // atributo opcional para essa situação. Gera um clone do estado atual, para o caso de conter mais de um atributo e não sobrescrever todo o estado
+      ...state, // atributo opcional para essa situação. Gera um clone do estado atual, para o caso de conter mais de um atributo e não sobrescrever todo o estado
       users: state.users.filter(u => u.id !== user.id)
     }
   }

@@ -27,4 +27,5 @@ export default [
     avatarUrl:
       'https://cdn.pixabay.com/photo/2016/11/01/21/11/avatar-1789663_960_720.png',
   },
+  // https://cdn.pixabay.com/photo/2016/03/31/20/27/avatar-1295773_960_720.png
 ]
