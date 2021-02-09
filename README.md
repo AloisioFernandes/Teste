@@ -1,2 +1,2 @@
 # Teste
- Projetos pessoais e aplicativos para testar de funcionalidades.
+ Projetos pessoais e aplicativos para testar funcionalidades.
