@@ -25,8 +25,8 @@ function AuthProvider({ children }) {
 
     localStorage.setItem('token', JSON.stringify(token))
     api.defaults.headers.Authorization = `bearer ${token}`
-    history.push('/users')
     setAuthenticated(true)
+    history.push('/users')
   }
 
   function handleLogout() {
@@ -36,12 +36,8 @@ function AuthProvider({ children }) {
     history.push('/login')
   }
 
-  if(loading) {
-    return <h1>Loading...</h1>
-  }
-
   return ( // só será renderizado se loading for false
-    <Context.Provider value={{ authenticated, handleLogin, handleLogout }}>
+    <Context.Provider value={{ authenticated, handleLogin, handleLogout, loading }}>
       {children}
     </Context.Provider>
   )
