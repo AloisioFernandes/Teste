@@ -17,6 +17,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Text style={{ fontSize: 25, marginTop: 30 }}>CELULAR</Text>
+
       <TextInputMask 
         style={styles.input}
         type={'cel-phone'}
