@@ -3,9 +3,9 @@ Projeto realizado com React Native para encurtar urls utilizando a [API gratuita
 
 # App
 <p align="center">
-  <img align="center" src="../.github/Home.png" alt="Home" width="275" border="0">
-  <img align="center" src="../.github/URL curta.png" alt="URL curta" width="275" border="0">
-  <img align="center" src="../.github/Alert.png" alt="Alert" width="275" border="0">
+  <img align="center" src=".github/Home.png" alt="Home" width="275" border="0">
+  <img align="center" src=".github/URL curta.png" alt="URL curta" width="275" border="0">
+  <img align="center" src=".github/Alert.png" alt="Alert" width="275" border="0">
 </p>
 
 # Funcionalidades
