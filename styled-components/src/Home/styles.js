@@ -4,7 +4,7 @@ export const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: #121212;
+  background-color: ${props => props.theme.bg};
 `;
 
 export const Title = styled.Text`
@@ -14,5 +14,5 @@ export const Title = styled.Text`
 
 export const SubTitle = styled.Text`
   font-size: 20px;
-  color: red;
+  color: ${props => props.theme.color};
 `;
