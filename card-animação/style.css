@@ -1,0 +1,174 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+html{
+  font-family: sans-serif;
+}
+
+body {
+  background: #121212;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body a{
+  color: #2BB9D8;
+  text-decoration: none;
+}
+
+.Sujeito {
+  padding: 2em 5em;
+  font: normal 40px/50px Montserrat, sans-serif;
+  display: flex;
+  flex-direction: row;
+  color: #999;
+}
+
+.Sujeito p {
+  height: 50px;
+  margin-right: 0.3em;
+}
+
+.Sujeito b {
+  float: left;
+  overflow: hidden;
+  height: 50px;
+  top: 40px;
+}
+
+.Sujeito .insideSujeito {
+  display: inline-block;
+  color: #33B7FF;
+  position: relative;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+
+/*animation*/
+-webkit-animation:move 7s;
+   -moz-animation:move 7s;
+    -ms-animation:move 7s;
+     -o-animation:move 7s;
+        animation:move 7s;
+/*animation-iteration-count*/
+-webkit-animation-iteration-count:infinite;
+   -moz-animation-iteration-count:infinite;
+    -ms-animation-iteration-count:infinite;
+     -o-animation-iteration-count:infinite;
+        animation-iteration-count:infinite;
+/*animation-delay*/
+-webkit-animation-delay:2s;
+   -moz-animation-delay:2s;
+    -ms-animation-delay:2s;
+     -o-animation-delay:2s;
+        animation-delay:2s;
+}
+@keyframes move{
+0%  { top: 0px; }
+25% { top: -50px; }
+50% { top: -100px; }
+75% { top: -150px; }
+}
+
+@-webkit-keyframes move {
+  0%  { top: 0px; }
+  25% { top: -50px; }
+  50% { top: -100px; }
+  75% { top: -150px; }
+}
+@-moz-keyframes move {
+  0%  { top: 0px; }
+  25% { top: -50px; }
+  50% { top: -100px; }
+  75% { top: -150px; }
+}
+@-o-keyframes move {
+  0%  { top: 0px; }
+  25% { top: -50px; }
+  50% { top: -100px; }
+  75% { top: -150px; }
+}
+@keyframes move {
+  0%  { top: 0px; }
+  25% { top: -50px; }
+  50% { top: -100px; }
+  75% { top: -150px; }
+}
+
+.card{
+ height: 400px;
+ width: 300px;
+ position: absolute;
+ top: 55%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ transform-style: preserve-3d;
+ perspective: 600px;
+ transition: .6s;
+}
+
+.card:hover .card-front{
+  transform: rotateX(-180deg);
+}
+.card:hover .card-back{
+  transform: rotateX(0deg);
+}
+
+.card-back h2{
+  margin: 60% auto 35% auto;
+  font-size: 25px;
+}
+.card-back{
+  font-size: 22px;
+}
+
+.card-front{
+ border-radius: 5px;
+ width: 100%; 
+ height: 100%;
+ background-image: url(https://github.com/AloisioFernandes.png);
+ background-position: 50% 50%;
+ background-size: cover;
+ position: absolute;
+ background-color: #212121;
+ backface-visibility: hidden;
+ transform: rotateX(0deg);
+ transition: .6s;
+}
+
+.card-back{
+  border-radius: 5px;
+  width: 100%; 
+  height: 100%;
+  position: absolute;
+  background-color: #212121;
+  backface-visibility: hidden;
+  transform: rotateX(180deg);
+  transition: .6s; 
+  color:#FFF; 
+  text-align: center;
+}
+.card-back span{
+  color: #2BB9D8;
+}
+
+.card-back a{
+  width: 25px; 
+  height: 25px;
+  padding: 3px 3px;
+  border-radius: 4px;
+  line-height: 20px;
+  transition: ease-in-out 0.1s;
+}
+
+.card-back a:hover{
+  color: #121212;
+  background-color: #2BB9D8;
+}
