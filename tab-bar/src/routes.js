@@ -7,16 +7,75 @@ import Notification from './pages/Notification'
 import Profile from './pages/Profile'
 import Search from './pages/Search'
 
+import { Entypo, Feather } from '@expo/vector-icons'
+
 const Tab = createBottomTabNavigator()
 
 export default function Routes() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Início" component={Home} />
-      <Tab.Screen name="Procurar" component={Search} />
-      <Tab.Screen name="Novo" component={New} />
-      <Tab.Screen name="Notificações" component={Notification} />
-      <Tab.Screen name="Perfil" component={Profile} />
+    <Tab.Navigator
+      tabBarOptions={{
+        style: {
+          backgroundColor: '#121212',
+          borderTopColor: 'transparent'
+        },
+        activeTintColor: '#FFF',
+        tabStyle: {
+          paddingBottom: 5,
+          paddingTop: 5
+        }
+      }}
+    >
+      <Tab.Screen 
+        name="Início" 
+        component={Home} 
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <Entypo name="home" size={size} color={color} />
+          )
+        }}
+      />
+
+      <Tab.Screen 
+        name="Procurar" 
+        component={Search}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <Feather name="search" size={size} color={color} />
+          )
+        }}
+      />
+
+      <Tab.Screen 
+        name="Novo" 
+        component={New} 
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            null
+          )
+        }}
+      />
+
+      <Tab.Screen 
+        name="Notificações" 
+        component={Notification} 
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <Entypo name="notification" size={size} color={color} />
+          )
+        }}
+      />
+
+      <Tab.Screen 
+        name="Perfil" 
+        component={Profile} 
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <Feather name="user" size={size} color={color} />
+          )
+        }}
+      />
+
     </Tab.Navigator>
   )
 }
