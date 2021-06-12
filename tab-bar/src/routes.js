@@ -7,6 +7,8 @@ import Notification from './pages/Notification'
 import Profile from './pages/Profile'
 import Search from './pages/Search'
 
+import ButtonNew from './components/ButtonNew'
+
 import { Entypo, Feather } from '@expo/vector-icons'
 
 const Tab = createBottomTabNavigator()
@@ -50,8 +52,9 @@ export default function Routes() {
         name="Novo" 
         component={New} 
         options={{
-          tabBarIcon: ({ size, color }) => (
-            null
+          tabBarLabel: '',
+          tabBarIcon: ({ focused, size }) => (
+            <ButtonNew size={size} focused={focused} />
           )
         }}
       />
