@@ -1,11 +1,14 @@
 import React from 'react'
 import { View, StyleSheet, Text } from 'react-native'
 import { ScrollView, TextInput } from 'react-native-gesture-handler'
+import { useNavigation } from '@react-navigation/native'
 import { Feather } from '@expo/vector-icons'
 
 import New from '../components/New'
 
 export default function Home() {
+  const navigation = useNavigation()
+
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -33,6 +36,20 @@ export default function Home() {
         <New 
           cover={require('../assets/house1.jpg')} 
           name="Casa de Praia"
+          description="Casa nova uma quadra do mar, lugar seguro e monitorado 24 horas."
+          onPress={() => navigation.navigate('detail')}
+        />
+
+        <New 
+          cover={require('../assets/house2.jpg')} 
+          name="Casa Floripa"
+          description="Casa nova uma quadra do mar, lugar seguro e monitorado 24 horas."
+          onPress={() => {}}
+        />
+
+        <New 
+          cover={require('../assets/house3.jpg')} 
+          name="Rancho SP"
           description="Casa nova uma quadra do mar, lugar seguro e monitorado 24 horas."
           onPress={() => {}}
         />
