@@ -6,6 +6,7 @@ import { Feather } from '@expo/vector-icons'
 
 import New from '../components/New'
 import House from '../components/House'
+import Recommended from '../components/Recommended'
 
 export default function Home() {
   const navigation = useNavigation()
@@ -61,8 +62,37 @@ export default function Home() {
       </View>
 
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ paddingHorizontal: 15 }}>
-        <House />
+        <House
+          cover={require('../assets/house4.jpg')} 
+        />
+        <House
+          cover={require('../assets/house5.jpg')} 
+        />
+        <House
+          cover={require('../assets/house6.jpg')} 
+        />
       </ScrollView>
+
+      <Text style={[styles.title, { marginTop: 20 }]}>Dica do dia</Text>
+
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ paddingHorizontal: 15 }}>
+        <Recommended 
+          cover={require('../assets/house1.jpg')} 
+          house="Casa Floripa"
+          offer="25%"
+        />
+        <Recommended 
+          cover={require('../assets/house4.jpg')} 
+          house="São Paulo"
+          offer="15%"
+        />
+        <Recommended 
+          cover={require('../assets/house6.jpg')} 
+          house="Rancho Praia"
+          offer="10%"
+        />
+      </ScrollView>
+
     </ScrollView>
   )
 }
