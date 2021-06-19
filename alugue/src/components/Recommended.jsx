@@ -6,10 +6,10 @@ export default function Recommended({ cover, house, offer }) {
     <ImageBackground
       source={cover}
       style={styles.container}
-      blurRadius={2}
+      blurRadius={3}
     >
-      <Text style={styles.house}>{house}</Text>
-      <Text style={styles.description}>{offer} OFF</Text>
+      <Text style={[styles.house, styles.shadow]}>{house}</Text>
+      <Text style={[styles.description, styles.shadow]}>{offer} OFF</Text>
     </ImageBackground>
   )
 }
@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
     height: 130,
     width: 230,
     marginRight: 20,
-    borderRadius: 10,
     marginBottom: 40,
     opacity: 0.8,
     backgroundColor: '#000',
@@ -47,4 +46,3 @@ const styles = StyleSheet.create({
   }
 })
 
-// 20:00
