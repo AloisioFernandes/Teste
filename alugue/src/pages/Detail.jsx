@@ -43,21 +43,21 @@ export default function Detail() {
         <View style={styles.slide}>
           <Image
             source={require('../assets/house5.jpg')}
-            style={{ width: 90, height: 90 }} 
+            style={{ width: 90, height: 90, borderRadius: 8 }} 
           />
         </View>
 
         <View style={styles.slide}>
           <Image
-            source={require('../assets/house5.jpg')}
-            style={{ width: 90, height: 90 }} 
+            source={require('../assets/house6.jpg')}
+            style={{ width: 90, height: 90, borderRadius: 8 }} 
           />
         </View>
 
         <View style={styles.slide}>
           <Image
-            source={require('../assets/house5.jpg')}
-            style={{ width: 90, height: 90 }} 
+            source={require('../assets/house2.jpg')}
+            style={{ width: 90, height: 90, borderRadius: 8 }} 
           />
         </View>
       </ScrollView>
@@ -110,7 +110,24 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat_700Bold',
     fontSize: 16,
     color: '#000'
+  },
+
+  description: {
+    fontFamily: 'MontSerrat_500Medium',
+    paddingHorizontal: 20,
+    color: '#b3aeae',
+    fontSize: 14,
+    lineHeight: 20,
+    marginTop: 20
+  },
+
+  slide: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFF',
+    height: 90,
+    width: 90,
+    borderRadius: 8,
+    marginRight:  20
   }
 })
-
-// 40:00
