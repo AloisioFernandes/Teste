@@ -4,12 +4,14 @@ import { View, Text, StyleSheet } from 'react-native';
 import { AuthContext } from '../../contexts/auth'
 
 export default function Pedidos() {
- const { nome } = useContext()
+ const { nome, user } = useContext()
 
  return (
    <View style={styles.container}>
      <Text>Pagina Pedidos</Text>
      <Text>Nome: {nome}</Text>
+     <Text>Email logado: {user.email}</Text>
+     <Text>Status: {user.status}</Text>
    </View>
   );
 }

@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
+
+import { AuthContext } from '../../contexts/auth'
 
 export default function Home() {
   const navigation = useNavigation();
 
+  const { user } = useContext(AuthContext)
+
   return (
    <View style={styles.container}>
      <Text>Pagina Home</Text>
+     <Text>Bem vindo: {user.email}</Text>
 
      <Button 
      title="Acessar pedidos"
