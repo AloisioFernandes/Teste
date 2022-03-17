@@ -7,6 +7,8 @@ import {
   TouchableOpacity
 } from 'react-native'
 
+import * as Animatable from 'react-native-animatable'
+
 export default function Welcome() {
   return (
     <View style={styles.container}>
