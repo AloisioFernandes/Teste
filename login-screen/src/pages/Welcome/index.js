@@ -29,7 +29,10 @@ export default function Welcome() {
         <Text style={styles.title}>Monitore, organize seus gastos de qualquer lugar!</Text>
         <Text style={styles.text}>Faça o login para começar</Text>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity 
+          style={styles.button}
+          onPress={() => navigation.navigate('SignIn')}
+        >
           <Text style={styles.buttonText}>Acessar</Text>
         </TouchableOpacity>
       </Animatable.View>
