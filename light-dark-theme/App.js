@@ -3,11 +3,15 @@ import { useColorScheme } from 'react-native'
 import Home from './src/Home'
 
 import { ThemeProvider } from 'styled-components'
-import theme from './src/theme'
+import themes from './src/theme'
 
 export default function App() {
+  const deviceTheme = useColorScheme()
+
+  const theme = themes[deviceTheme] || theme.dark
+
   return (
-    <ThemeProvider theme={{ background: '#121212', color: '#FFF' }}>
+    <ThemeProvider theme={theme}>
       <Home />
     </ThemeProvider>
   );
