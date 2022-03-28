@@ -1,4 +1,5 @@
 export default { 
   color: '#121212', 
-  background: '#FFF' 
+  background: '#FFF',
+  tag: '#E9E9E9'
 }

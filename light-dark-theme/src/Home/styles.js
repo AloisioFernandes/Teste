@@ -16,6 +16,6 @@ export const Description = styled.Text`
   margin-top: 12px;
   font-style: italic;
   color: ${props => props.theme.color};
-  background-color: #E9E9E9;
+  background-color: ${props => props.theme.tag};
   padding: 8px 20px;
 `;
