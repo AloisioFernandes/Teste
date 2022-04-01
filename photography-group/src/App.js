@@ -4,14 +4,14 @@ function App() {
   return (
     <div className="container">
       <div className="logo">
-        <img src="" alt="" />
+        <img src="/photography-group.png" alt="Photography Group" />
       </div>
       <div className="file-drop">
         <div className="text">Arraste a imagem para cá</div>
       </div>
       <div className="preview">
         <div className="image">
-          <img src="" alt="" />
+          <img src="https://loremflickr.com/600/600?random=1" alt="Lorem Flickr" />
         </div>
       </div>
     </div>
