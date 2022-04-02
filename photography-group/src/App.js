@@ -13,6 +13,18 @@ function App() {
         <div className="image">
           <img src="https://loremflickr.com/600/600?random=1" alt="Lorem Flickr" />
         </div>
+        <div className="image">
+          <img src="https://loremflickr.com/600/600?random=2" alt="Lorem Flickr" />
+        </div>
+        <div className="image">
+          <img src="https://loremflickr.com/600/600?random=3" alt="Lorem Flickr" />
+        </div>
+        <div className="image">
+          <img src="https://loremflickr.com/600/600?random=4" alt="Lorem Flickr" />
+        </div>
+        <div className="image">
+          <img src="https://loremflickr.com/600/600?random=5" alt="Lorem Flickr" />
+        </div>
       </div>
     </div>
 
