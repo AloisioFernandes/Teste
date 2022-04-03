@@ -15,5 +15,29 @@ body {
 }
 
 .container {
-  
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .logo {
+  margin-bottom: 20px;
+}
+
+.container .logo img {
+  width: 180px;
+  height: 180px;
+}
+
+.container .file-drop {
+  width: 600px;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: dashed 4px #E1E1E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
