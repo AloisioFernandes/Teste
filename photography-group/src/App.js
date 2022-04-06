@@ -23,6 +23,7 @@ function App() {
       </div>
       <div
         className="file-drop"
+        {...dragEvents}
       >
         <div className="text">Arraste a imagem para cá</div>
       </div>
