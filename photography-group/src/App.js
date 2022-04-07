@@ -1,6 +1,10 @@
+import { useState } from 'react'
+
 import "./App.css";
 
 function App() {
+  const [images, setImages] = useState([])
+
   const dragEvents = {
     onDragEnter: (e) => {
       e.preventDefault();
@@ -28,36 +32,16 @@ function App() {
         <div className="text">Arraste a imagem para cá</div>
       </div>
       <div className="preview">
-        <div className="image">
-          <img
-            src="https://loremflickr.com/600/600?random=1"
-            alt="Lorem Flickr"
-          />
-        </div>
-        <div className="image">
-          <img
-            src="https://loremflickr.com/600/600?random=2"
-            alt="Lorem Flickr"
-          />
-        </div>
-        <div className="image">
-          <img
-            src="https://loremflickr.com/600/600?random=3"
-            alt="Lorem Flickr"
-          />
-        </div>
-        <div className="image">
-          <img
-            src="https://loremflickr.com/600/600?random=4"
-            alt="Lorem Flickr"
-          />
-        </div>
-        <div className="image">
-          <img
-            src="https://loremflickr.com/600/600?random=5"
-            alt="Lorem Flickr"
-          />
-        </div>
+        {images.map((image) => {
+          return (
+            <div className="image">
+              <img
+                src="https://loremflickr.com/600/600?random=1"
+                alt="Lorem Flickr"
+              />
+            </div>
+          )
+        })}
       </div>
     </div>
   );
