@@ -17,6 +17,11 @@ function App() {
     },
     onDrop: (e) => {
       e.preventDefault();
+      const files = Array.from(e.dataTransfer.files)
+      const images = files.map((file) => {
+        const { name, size } = file
+        return { name, size, preview: URL.createObjectURL(file) }
+      })
     }
   }
 
