@@ -22,6 +22,7 @@ function App() {
         const { name, size } = file
         return { name, size, preview: URL.createObjectURL(file) }
       })
+      setImages(images)
     }
   }
 
@@ -39,10 +40,10 @@ function App() {
       <div className="preview">
         {images.map((image) => {
           return (
-            <div className="image">
+            <div className="image" key={image.name}>
               <img
-                src="https://loremflickr.com/600/600?random=1"
-                alt="Lorem Flickr"
+                src={image.preview}
+                alt={image.name}
               />
             </div>
           )
