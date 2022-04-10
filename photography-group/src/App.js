@@ -18,11 +18,11 @@ function App() {
     onDrop: (e) => {
       e.preventDefault();
       const files = Array.from(e.dataTransfer.files)
-      const images = files.map((file) => {
+      files.map((file) => {
         const { name, size } = file
-        return { name, size, preview: URL.createObjectURL(file) }
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
       })
-      setImages(images)
     }
   }
 
