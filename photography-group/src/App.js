@@ -22,6 +22,14 @@ function App() {
         const { name, size } = file
         const reader = new FileReader()
         reader.readAsDataURL(file)
+        reader.onloadend = () => {
+          const preview = reader.result
+          const image = { name, size, preview }
+
+          setImages((prevImages) => {
+            return [...prevImages, image]
+          })
+        }
       })
     }
   }
