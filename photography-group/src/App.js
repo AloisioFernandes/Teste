@@ -26,10 +26,9 @@ function App() {
           const preview = reader.result
           const image = { name, size, preview }
 
-          setImages((prevImages) => {
-            return [...prevImages, image]
-          })
+          setImages((prevImages) => [...prevImages, image])
         }
+        return null
       })
     }
   }
