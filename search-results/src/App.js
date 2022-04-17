@@ -9,9 +9,9 @@ function App() {
       </form>
       <div className="search-results">
         <ul>
-          <li>Mario</li>
-          <li>Zelda</li>
-          <li>Donkey Kong</li>
+          <li><span>Mario</span></li>
+          <li><span>Zelda</span></li>
+          <li><span>Donkey Kong</span></li>
         </ul>
       </div>
     </div>
