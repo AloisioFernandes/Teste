@@ -1,12 +1,23 @@
+import { useState } from 'react'
+
 import './App.css';
 
 function App() {
+  const [data, setData] = useState([])
+  
   const handleInputChange = (e) => {
     e.preventDefault()
     const { value } = e.target
-    if(value) return
+
+    if(!value) return
+
+    const url = `http://localhost:8337/games?q=${value}`
+
+    fetch(url)
+      .then((response) => response.json())
+      .then(console.log())
     
-    console.log(e.target.value)
+    console.log('handleInputChange', e.target.value)
   }
 
   return (
