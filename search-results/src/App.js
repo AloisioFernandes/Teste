@@ -15,9 +15,7 @@ function App() {
 
     fetch(url)
       .then((response) => response.json())
-      .then(console.log())
-    
-    console.log('handleInputChange', e.target.value)
+      .then(({ data }) => setData(data))
   }
 
   return (
