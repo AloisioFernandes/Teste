@@ -24,13 +24,7 @@ function App() {
         <label htmlFor="search">Game search</label>
         <input name="search" id="search" onChange={handleInputChange} />
       </form>
-      <div className="search-results">
-        <ul>
-          <li><span>Mario</span></li>
-          <li><span>Zelda</span></li>
-          <li><span>Donkey Kong</span></li>
-        </ul>
-      </div>
+      <SearchResults data={data} /> 
     </div>
   );
 }
