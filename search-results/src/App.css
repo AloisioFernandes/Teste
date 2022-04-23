@@ -42,6 +42,10 @@ body {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
+.container .search-results ul {
+  overflow: hidden;
+}
+
 .container .search-results ul li {
   font-size: 1.5rem;
   font-weight: bold;
@@ -49,6 +53,12 @@ body {
   color: rgba(255, 255, 255, 0.5);
   list-style-type: '\2b50';
   list-style-position: inside;
+
+  position: relative;
+  left: 100%;
+  animation: rightToLeft 0.5s ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .container .search-results ul li:hover {
@@ -59,4 +69,16 @@ body {
 
 .container .search-results ul li span {
   padding-left: 1ch;
+}
+
+@keyframes rightToLeft {
+  0% {
+    left: 100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
 }
