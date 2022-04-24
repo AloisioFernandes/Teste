@@ -59,6 +59,7 @@ body {
   animation: rightToLeft 0.5s ease-in;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  animation-delay: var(--delay);
 }
 
 .container .search-results ul li:hover {
