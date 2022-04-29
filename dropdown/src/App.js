@@ -1,18 +1,16 @@
 
 import './App.css';
+import DropdownBrazilianCities from './components/Forms/DropdownBrazilianCities';
+import DropdownBrazilianStates from './components/Forms/DropdownBrazilianStates';
 
 function App() {
   return (
     <div className="container">
       <form>
         <label htmlFor="state">Estado:</label>
-        <select id="state">
-          <option value="">Selecione um estado...</option>
-        </select>
+        <DropdownBrazilianStates />
         <label htmlFor="city">Cidade:</label>
-        <select id="city">
-          <option value="">Selecione uma cidade...</option>
-        </select>
+        <DropdownBrazilianCities />
       </form>
     </div>
   );
