@@ -14,11 +14,10 @@ const DropdownBrazilianCities = () => {
   return (
     <select id="city">
       <option value="">Selecione uma cidade...</option>
-      {cities.map(city) => {
-        return (
-          <option value="">Selecione uma cidade...</option>
-        )
-      }}
+      {cities.map((city) => {
+        const { id, nome } = city
+        return (<option value={id}>{nome}</option>)
+      })}
     </select>
   )
 }
