@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { fetchStates } from '../../../helpers/ibge'
 
-const DropdownBrazilianStates = () => {
+const DropdownBrazilianStates = ({ onChange = () => {} }) => {
   const [states, setStates] = useState([])
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const DropdownBrazilianStates = () => {
   }, [])
 
   return (
-    <select id="state">
+    <select id="state" name="state" onChange={onChange}>
       <option value="">Selecione um estado...</option>
       {states.map((state) => {
         const {sigla, nome} = state
