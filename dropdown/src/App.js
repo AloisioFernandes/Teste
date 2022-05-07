@@ -6,11 +6,12 @@ import DropdownBrazilianStates from './components/Forms/DropdownBrazilianStates'
 
 function App() {
 
-  const [formValue, setFormValue] = useState({})
+  const [formValues, setFormValues] = useState({})
 
   const handleInputChange = (e) => {
     e.preventDefault()
-    const { formValue, name } = e.target
+    const { value, name } = e.target
+    setFormValues({ ...formValues, [name]: value })
   }
 
   return (
@@ -19,7 +20,7 @@ function App() {
         <label htmlFor="state">Estado:</label>
         <DropdownBrazilianStates onChange={handleInputChange} />
         <label htmlFor="city">Cidade:</label>
-        <DropdownBrazilianCities />
+        <DropdownBrazilianCities state={formValues.state} onChange={handleInputChange} />
       </form>
     </div>
   );

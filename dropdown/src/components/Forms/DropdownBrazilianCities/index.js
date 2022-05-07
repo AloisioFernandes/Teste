@@ -2,21 +2,21 @@ import { useEffect, useState } from "react"
 
 import { fetchCitiesForState } from "../../../helpers/ibge"
 
-const DropdownBrazilianCities = () => {
+const DropdownBrazilianCities = ({ state, onChange = () => {} }) => {
   const [cities, setCities] = useState([])
 
   useEffect(() => {
-    fetchCitiesForState('MG').then((cities) => {
+    fetchCitiesForState(state).then((cities) => {
       setCities(cities)
     })
-  }, [])
+  }, [state])
 
   return (
-    <select id="city">
+    <select id="city" name="city" onChange={onChange}>
       <option value="">Selecione uma cidade...</option>
       {cities.map((city) => {
         const { id, nome } = city
-        return (<option value={id}>{nome}</option>)
+        return (<option value={id} key={id}>{nome}</option>)
       })}
     </select>
   )
