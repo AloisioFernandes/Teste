@@ -8,6 +8,7 @@ export const fetchStates = () => {
 }
 
 export const fetchCitiesForState = (state) => {
+  if(!state) return Promise.resolve([])
   const url = `${BASE_URL}/localidades/estados/${state}/municipios`
   return fetch(url).then(responseToJson)
 }
