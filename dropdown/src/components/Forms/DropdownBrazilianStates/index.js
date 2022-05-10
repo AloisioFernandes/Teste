@@ -7,6 +7,12 @@ const DropdownBrazilianStates = ({ id, name, onChange = () => {} }) => {
 
   useEffect(() => {
     fetchStates().then((states) => {
+      return states.map((state) => {
+        return {label: state.nome, value: state.sigla}
+      }).sort((a, b) => {
+        return a.label.localeCompare(b.label)
+      })
+    }).then((states) => {
       setStates(states)
     })
   }, [])
@@ -15,8 +21,8 @@ const DropdownBrazilianStates = ({ id, name, onChange = () => {} }) => {
     <select id={id || name} name={name || id} onChange={onChange}>
       <option value="">Selecione um estado...</option>
       {states.map((state) => {
-        const {sigla, nome} = state
-        return (<option key={sigla} value={sigla}>{nome}</option>)
+        const {label, value} = state
+        return (<option key={value} value={value}>{label}</option>)
       })}
     </select>
   )
