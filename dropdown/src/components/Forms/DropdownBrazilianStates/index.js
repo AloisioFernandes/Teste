@@ -1,20 +1,12 @@
 import { useEffect, useState } from 'react'
 
-import { fetchStates } from '../../../helpers/ibge'
+import { fetchStates, parseStates } from '../../../helpers/ibge'
 
 const DropdownBrazilianStates = ({ id, name, onChange = () => {} }) => {
   const [states, setStates] = useState([])
 
   useEffect(() => {
-    fetchStates().then((states) => {
-      return states.map((state) => {
-        return {label: state.nome, value: state.sigla}
-      }).sort((a, b) => {
-        return a.label.localeCompare(b.label)
-      })
-    }).then((states) => {
-      setStates(states)
-    })
+    fetchStates().then(parseStates).then(setStates)
   }, [])
 
   return (
