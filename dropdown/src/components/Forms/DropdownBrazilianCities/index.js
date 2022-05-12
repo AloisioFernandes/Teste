@@ -7,6 +7,11 @@ const DropdownBrazilianCities = ({ id, name, state, onChange = () => {} }) => {
 
   useEffect(() => {
     fetchCitiesForState(state).then((cities) => {
+      return cities.map((city) => {
+        const {id, nome} = city
+        return {label: nome, value: id}
+      })
+    }).then((cities) => {
       setCities(cities)
     })
   }, [state])
@@ -15,8 +20,8 @@ const DropdownBrazilianCities = ({ id, name, state, onChange = () => {} }) => {
     <select id={id || name} name={name || id} onChange={onChange}>
       <option value="">Selecione uma cidade...</option>
       {cities.map((city) => {
-        const { id, nome } = city
-        return (<option value={id} key={id}>{nome}</option>)
+        const { value, label } = city
+        return (<option value={value} key={value}>{label}</option>)
       })}
     </select>
   )
