@@ -10,6 +10,15 @@ export const parseStates = (states) => {
   })
 }
 
+export const parseCities = (cities) => {
+  return cities.map((city) => {
+    const {id, nome} = city
+    return {label: nome, value: id}
+  }).sort((a, b) => {
+    return a.label.localeCompare(b.label)
+  })
+}
+
 export const fetchStates = () => {
   const url = `${BASE_URL}/localidades/estados`
   return fetch(url).then(responseToJson)

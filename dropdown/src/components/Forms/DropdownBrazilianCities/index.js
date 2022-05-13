@@ -1,17 +1,12 @@
 import { useEffect, useState } from "react"
 
-import { fetchCitiesForState } from "../../../helpers/ibge"
+import { fetchCitiesForState, parseCities } from "../../../helpers/ibge"
 
 const DropdownBrazilianCities = ({ id, name, state, onChange = () => {} }) => {
   const [cities, setCities] = useState([])
 
   useEffect(() => {
-    fetchCitiesForState(state).then((cities) => {
-      return cities.map((city) => {
-        const {id, nome} = city
-        return {label: nome, value: id}
-      })
-    }).then((cities) => {
+    fetchCitiesForState(state).then(parseCities).then((cities) => {
       setCities(cities)
     })
   }, [state])
