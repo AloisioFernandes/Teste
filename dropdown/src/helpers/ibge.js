@@ -2,21 +2,19 @@ const BASE_URL = 'https://servicodados.ibge.gov.br/api/v1'
 
 const responseToJson = (response) => response.json()
 
+const sortByLabelAscending = (a, b) => {
+  return a.label.localeCompare(b.label)
+}
+
 export const parseStates = (states) => {
-  return states.map((state) => {
-    return {label: state.nome, value: state.sigla}
-  }).sort((a, b) => {
-    return a.label.localeCompare(b.label)
-  })
+  return states
+  .map((state) => ({label: state.nome, value: state.sigla}))
+  .sort(sortByLabelAscending)
 }
 
 export const parseCities = (cities) => {
-  return cities.map((city) => {
-    const {id, nome} = city
-    return {label: nome, value: id}
-  }).sort((a, b) => {
-    return a.label.localeCompare(b.label)
-  })
+  return cities.map((city) => ({label: city.nome, value: city.id}))
+  .sort(sortByLabelAscending)
 }
 
 export const fetchStates = () => {
