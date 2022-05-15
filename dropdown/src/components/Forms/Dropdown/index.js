@@ -3,8 +3,8 @@ const Dropdown = ({ id, nome, data, onChange = () => {}}) => {
     <select id={id || name} name={name || id} onChange={onChange}>
       <option value="">Selecione um estado...</option>
       {states.map((state) => {
-        const {label, value} = state
-        return (<option key={value} value={value}>{label}</option>)
+        const {name, data} = state
+        return (<option key={data} value={value}>{name}</option>)
       })}
     </select>
   )
