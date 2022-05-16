@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 
+import Dropdown from '../Dropdown'
+
 import { fetchStates, parseStates } from '../../../helpers/ibge'
 
 const DropdownBrazilianStates = ({ id, name, onChange = () => {} }) => {
@@ -9,15 +11,14 @@ const DropdownBrazilianStates = ({ id, name, onChange = () => {} }) => {
     fetchStates().then(parseStates).then(setStates)
   }, [])
 
-  return (
-    <select id={id || name} name={name || id} onChange={onChange}>
-      <option value="">Selecione um estado...</option>
-      {states.map((state) => {
-        const {label, value} = state
-        return (<option key={value} value={value}>{label}</option>)
-      })}
-    </select>
-  )
+  const dropdownOptions = {
+    id,
+    name,
+    data: states,
+    onChange
+  }
+
+  return (<Dropdown {...dropdownOptions} />)
 }
 
 export default DropdownBrazilianStates

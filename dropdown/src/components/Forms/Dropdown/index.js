@@ -1,10 +1,8 @@
-const Dropdown = ({ id, nome, data, onChange = () => {}}) => {
+const Dropdown = ({ id, name, data = [], onChange = () => {}}) => {
   return (
     <select id={id || name} name={name || id} onChange={onChange}>
-      <option value="">Selecione um estado...</option>
-      {states.map((state) => {
-        const {name, data} = state
-        return (<option key={data} value={value}>{name}</option>)
+      {data.map(({label, value}) => {
+        return (<option key={value} value={value}>{label}</option>)
       })}
     </select>
   )
