@@ -7,14 +7,21 @@ const sortByLabelAscending = (a, b) => {
 }
 
 export const parseStates = (states) => {
-  return states
+  const data = states
   .map((state) => ({label: state.nome, value: state.sigla}))
   .sort(sortByLabelAscending)
+
+  const defaultOption = { label: "Selecione o estado...", value: "" }
+  return [defaultOption, ...data]
 }
 
 export const parseCities = (cities) => {
-  return cities.map((city) => ({label: city.nome, value: city.id}))
+  const data = cities
+  .map((city) => ({label: city.nome, value: city.id}))
   .sort(sortByLabelAscending)
+
+  const defaultOption = { label: "Selecione a cidade...", value: "" }
+  return [defaultOption, ...data]
 }
 
 export const fetchStates = () => {
