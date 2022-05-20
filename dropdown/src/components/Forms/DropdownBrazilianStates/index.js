@@ -8,7 +8,10 @@ const DropdownBrazilianStates = ({ id, name, onChange = () => {} }) => {
   const [states, setStates] = useState([])
 
   useEffect(() => {
-    fetchStates().then(parseStates).then(setStates)
+    setStates([{label: 'Carregando...', value: ''}])
+    fetchStates()
+      .then(parseStates)
+      .then(setStates)
   }, [])
 
   const dropdownOptions = {

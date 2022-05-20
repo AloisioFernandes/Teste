@@ -8,9 +8,10 @@ const DropdownBrazilianCities = ({ id, name, state, onChange = () => {} }) => {
   const [cities, setCities] = useState([])
 
   useEffect(() => {
-    fetchCitiesForState(state).then(parseCities).then((cities) => {
-      setCities(cities)
-    })
+    setCities([{label: 'Carregando...', value: ''}])
+    fetchCitiesForState(state)
+      .then(parseCities)
+      .then(setCities)
   }, [state])
 
   const dropdownOptions = {
